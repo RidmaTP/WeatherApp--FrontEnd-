@@ -1,0 +1,47 @@
+
+
+<div class="main">
+    <h1>WEATHER APPLICATION</h1>
+    <input #box (keyup)="getValue(box.value)" type="text" id="input" pInputText />&nbsp;
+    <button (click)="onClick()" pButton type="button" label="Check" ></button>
+  
+
+    <!--<div class="labels">
+        <br>
+        <span>Temperature : {{temperature}}</span>
+        <br>
+        <span>Preassure : {{preassure}}</span>
+        <br>
+        <span>Humidity : {{humidity}}</span>
+        <br>
+        <span>Humidity : {{id}}</span>
+        <br>
+        <span>Humidity : {{main}}</span>
+        <br>
+        <span>icon : {{icon}}</span>
+        <br>
+
+    </div>-->
+</div> 
+
+<div class="box">
+    
+    <img class = "img" src = "\assets\sun.jpg" *ngIf="icon.charAt(2) =='d'">
+    <img class = "img" src = "\assets\moon.jpg" *ngIf="icon.charAt(2) =='n'">
+    
+    <div class = "temp">{{temperature| number: '1.0-0' }}°C</div>
+    
+    
+
+    <div class = "preassure_text">Preassure</div>
+    <div class = "preassure">{{preassure}}kPa</div>
+   
+    <div class="humidity_text">Humidity</div>
+    <div class="humidity">{{humidity}}%</div>
+
+    <img id = "icon"src = "http://openweathermap.org/img/wn/{{icon}}@2x.png">
+    <div class="desc">{{description}}</div>
+    
+</div>
+
+
